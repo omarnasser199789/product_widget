@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:picker_date/product_widget.dart';
+import 'package:product_widget/product_widget/pages/all_products_widget_v2.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,15 +30,7 @@ class DemoPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Favorite Button usage demo'),
       ),
-      body: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-
-            ],
-          )),
+      body: AllProductsWidgetV2()
     );
   }
 }

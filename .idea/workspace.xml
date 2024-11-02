@@ -7,9 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2oJ050S62YbXwMXHQA8aGBvfgQM" />
   <component name="ProjectReloadState">
     <option name="STATE" value="1" />
@@ -20,14 +20,26 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Flutter.main.dart.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/omarnaser/Documents/GitHub/product_widget",
+    "last_opened_file_path": "/Users/omarnaser/Documents/GitHub/product_widget/lib/core/widgets",
     "nodejs_package_manager_path": "npm",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/core/widgets" />
+      <recent name="$PROJECT_DIR$/lib/product_widget/widgets" />
+      <recent name="$PROJECT_DIR$/lib/core" />
+      <recent name="$PROJECT_DIR$/lib/product_widget" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/product_widget/pages" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
@@ -50,6 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730572183504</updated>
+      <workItem from="1730572276807" duration="1859000" />
     </task>
     <servers />
   </component>
