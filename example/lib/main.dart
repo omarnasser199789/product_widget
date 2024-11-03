@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:product_widget/product_widget/bloc/home_bloc.dart';
 import 'package:product_widget/product_widget/pages/all_products_widget_v2.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
@@ -34,7 +35,10 @@ class DemoPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Favorite Button usage demo'),
       ),
-      body: AllProductsWidgetV2()
+      body: BlocProvider(
+        create: (_) => sl<HomeBloc>(), // Provides HomeBloc to AllProductsWidgetV2
+        child: AllProductsWidgetV2(),
+      ),
     );
   }
 }
