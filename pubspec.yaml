@@ -14,8 +14,8 @@ dependencies:
   wheel_picker: ^0.0.3
   jiffy: ^6.2.1
   flutter_svg: ^2.0.9
-  ecapp_core:
-    path: ../ecapp_core
+  ecapp_core_v2:
+    path: ../ecapp_core_v2
   flutter_bloc: ^7.0.1
   video_player: ^2.7.2
   flutter_downloader: ^1.11.4

@@ -1,4 +1,4 @@
-import 'package:ecapp_core/product_attachment/product_attachment.dart';
+import 'package:ecapp_core_v2/product/data/model/attachment.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import '../../../../../../core/globals.dart';
@@ -9,8 +9,8 @@ import 'video_widget_v2.dart';
 /// Widget class representing a product item with video or image attachment
 class ProductWidgetV2 extends StatefulWidget {
   final String title; // Product title
-  final int id; // Product ID
-  final List<ProductAttachment> attachments; // List of attachments (videos/images)
+  final String id; // Product ID
+  final List<Attachment> attachments; // List of attachments (videos/images)
   final VideoPlayerController videoController;
 
   const ProductWidgetV2({
@@ -32,6 +32,7 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
 
   /// URL of the image attachment
   String _imageUrl = "";
+  String _accessKey = "";
   double _imageWidth = 0.0;
   double _imageHeight = 0.0;
   bool showVideo =false;
@@ -40,16 +41,21 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
   void initState() {
     super.initState();
     /// Find the first video attachment and initialize the video controller
-    widget.attachments.forEach((item) {
+    for (var item in widget.attachments) {
+
       if (item.isVideo) {
         _videoUrl = item.url;
+        _imageUrl = item.thumbnail;
+        _accessKey = item.password;
+
 
       } else {
+        _accessKey = item.password;
         _imageUrl = item.url;
         _imageWidth = item.width;
         _imageHeight = item.height;
       }
-    });
+    }
   }
 
 
@@ -72,7 +78,7 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
             _buildProductImage(),
 
             /// Product details (title, price, reviews, etc.)
-            _buildProductDetails(),
+            // _buildProductDetails(),
           ],
         ),
       ),
@@ -85,10 +91,14 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
       padding: padding,
       child: ClipRRect(
           borderRadius: nestedBorderRadius,
-          child: (_videoUrl!="")? VideoWidgetV2(imageUrl: _imageUrl,
-              videoUrl: serverUrl+_videoUrl,
+          child: (_videoUrl!="")?
+          VideoWidgetV2(
+              imageUrl: _imageUrl,
+              videoUrl: _videoUrl,
+              accessKey: _accessKey,
               imageHeight: _imageHeight,
-              imageWidth: _imageWidth): _buildCachedNetworkImage()
+              imageWidth: _imageWidth)
+              : _buildCachedNetworkImage()
       ),
     );
   }
@@ -99,6 +109,7 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
       aspectRatio: (_imageWidth/_imageHeight>0)?_imageWidth/_imageHeight:1,
       child: CachedNetWorkImage(
         url: _imageUrl,
+        accessKey: _accessKey,
         imageWidth: _imageWidth,
         imageHeight: _imageHeight,
       ),

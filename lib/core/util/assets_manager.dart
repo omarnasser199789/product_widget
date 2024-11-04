@@ -12,7 +12,7 @@ class ImgAssets {
   // static String cards = '$_pngPath/cards.png';
 
   ///SVG
-  static String play = '$_svgPath/biometric.svg';
+  // static String play = '$_svgPath/biometric.svg';
 
 
 }

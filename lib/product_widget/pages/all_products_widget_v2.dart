@@ -1,6 +1,6 @@
 /// Import necessary packages and files
-import 'package:ecapp_core/product/data/model/product_model.dart';
-import 'package:ecapp_core/product/domain/use_case/get/get_lite_products_use_case.dart';
+import 'package:ecapp_core_v2/product/data/model/product_model.dart';
+import 'package:ecapp_core_v2/product/domain/use_case/get/get_products_use_case.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
@@ -32,7 +32,7 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
     /// Initialize the paging controller and add a listener for page requests
     _pagingController.addPageRequestListener((pageKey) {
       /// Trigger an event to fetch products from the HomeBloc
-      BlocProvider.of<HomeBloc>(context).add(GetAllProductsEvent(params: GetLiteProductsParams(page: pageKey, catId: widget.catId, pageSize: 7)));
+      BlocProvider.of<HomeBloc>(context).add(GetAllProductsEvent(params: GetProductsParams(page: pageKey, catId: widget.catId, pageSize: 7)));
     });
     super.initState();
   }
@@ -45,19 +45,20 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
         builder: (context, state) {
           /// Handle different states emitted by the HomeBloc
           debugPrint(state.toString());
-          if (state is SuccessGetAllProductsEntity){
-            /// Caching products
-            BlocProvider.of<HomeBloc>(context).add(CachingProductsEvent(productsEntity: state.productsEntity));
-          }
-          else if(state is SuccessCacheVideos){
-            if(state.productsEntity.data.isEmpty){return Container(child: Center(child: Text("There is no items!"),),); }
+          // if (state is SuccessGetAllProductsEntity){
+          //   /// Caching products
+          //   BlocProvider.of<HomeBloc>(context).add(CachingProductsEvent(productsEntity: state.productsEntity));
+          // }
+          // else
+            if(state is SuccessGetAllProductsEntity){
+            if(state.productsEntity.products.isEmpty){return Container(child: Center(child: Text("There is no items!"),),); }
 
             /// If successful, append the received data to the paging controller
-            final List<ProductModel> newData = state.productsEntity.data;
+            final List<ProductModel> newData = state.productsEntity.products;
 
             if (_pagingController.nextPageKey != null) {
               /// Maintain a set to keep track of unique item IDs
-              Set<int> uniqueItemIds = Set<int>.from(
+              Set<String> uniqueItemIds = Set<String>.from(
                   _pagingController.itemList?.map((item) => item.id) ?? []);
 
               /// Filter out items that are already in the list
@@ -66,7 +67,7 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
 
               /// Check if there are new items to append
               if (filteredData.isNotEmpty) {
-                final isLastPage = state.productsEntity.pages ==
+                final isLastPage = state.productsEntity.products ==
                     _pagingController.nextPageKey! + 1;
 
                 if (isLastPage) {
@@ -91,7 +92,7 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
               /// Build each product widget using the received data
             itemBuilder: (context, item, index) =>
                 ProductWidgetV2(
-                  title: item.title,
+                  title: item.titles,
                   attachments: item.attachments,
                   id: item.id,
                   videoController: videoController,

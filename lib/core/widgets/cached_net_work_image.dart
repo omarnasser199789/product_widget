@@ -5,9 +5,10 @@ import 'package:shimmer/shimmer.dart';
 import '../globals.dart';
 
 class CachedNetWorkImage extends StatefulWidget {
-  const CachedNetWorkImage({Key? key ,this.padding, this.imageHeight,this.imageWidth,this.url,this.border, this.borderRadius,this.boxFit}) : super(key: key);
+  const CachedNetWorkImage({Key? key ,this.padding, this.imageHeight,this.imageWidth,this.url,this.accessKey, this.border, this.borderRadius,this.boxFit}) : super(key: key);
 
   final String ?url;
+  final String ?accessKey;
   final BoxFit ?boxFit;
   final double ?imageWidth;
   final double ?imageHeight;
@@ -22,11 +23,13 @@ class _CachedNetWorkImageState extends State<CachedNetWorkImage> {
 
   @override
   Widget build(BuildContext context) {
-
     return ClipRRect(
       borderRadius:widget.borderRadius??BorderRadius.zero,
       child: CachedNetworkImage(
-        imageUrl:(widget.url!=null)?serverUrl+"${widget.url}":"https://picsum.photos/200/300",
+        httpHeaders: {
+          'AccessKey': '${widget.accessKey}',
+        },
+        imageUrl:(widget.url!=null&&widget.url!="")?"${widget.url}":"https://picsum.photos/200/300",
         placeholder: (context, url) => Center(
           child: Shimmer.fromColors(
               baseColor:Theme.of(context).cardColor,

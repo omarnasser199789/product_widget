@@ -17,10 +17,11 @@ class PlayButton extends StatelessWidget {
             color: Colors.black.withOpacity(0.5),
             borderRadius: BorderRadius.circular(10000),
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: SvgPicture.asset(ImgAssets.play),
-          ),
+          child: Icon(Icons.play_arrow),
+          // child: Padding(
+          //   padding: const EdgeInsets.all(8),
+          //   child: SvgPicture.asset(ImgAssets.play),
+          // ),
         ),
       ),
     );

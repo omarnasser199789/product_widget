@@ -9,14 +9,17 @@ import '../../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../../core/widgets/play_button.dart';
 /// Widget class representing a product item with video or image attachment
 class VideoWidgetV2 extends StatefulWidget {
-  String imageUrl;
-  String videoUrl;
-  double imageWidth;
-  double imageHeight;
-  VideoWidgetV2({
+  final String imageUrl;
+  final String videoUrl;
+  final String accessKey;
+  final double imageWidth;
+  final double imageHeight;
+
+  const VideoWidgetV2({
     Key? key,
     required this.imageUrl,
     required this.videoUrl,
+    required this.accessKey,
     required this.imageHeight,
     required this.imageWidth,
   }) : super(key: key);
@@ -40,50 +43,50 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
   }
 
 
-  Future<void> _downloadAndCacheVideos() async {
-    print("Start download and cache video");
-    isLoading.value = true;
-
-    int maxRetries = 3; // Maximum number of retry attempts
-    int retryCount = 0;
-    bool success = false;
-
-    while (retryCount < maxRetries && !success) {
-      try {
-        String p360AsMp4Url = VideoUrlManager.generateVideoUrl(VideoQuality.p360AsMp4, widget.videoUrl);
-        String? fileDir = await videoCachingManager.checkIfFileExists(p360AsMp4Url);
-        if(fileDir!=null){
-          print("Play video from file*****");
-          File file = File(fileDir);
-          videoController = VideoPlayerController.file(file);
-        }else{
-          print("Play video from URL^^^^^^");
-          videoCachingManager.stopCaching();
-          String p180Url = VideoUrlManager.generateVideoUrl(VideoQuality.p180, widget.videoUrl);
-          print(p180Url);
-          videoController = VideoPlayerController.networkUrl(Uri.parse(p180Url),formatHint: VideoFormat.hls,);
-        }
-
-        await videoController!.initialize();
-        videoController!.addListener(_onVideoStateChanged);
-        isInitialized = true;
-        videoController!.seekTo(Duration.zero);
-        VideoManager.playVideo(videoController!);
-        success = true; // Set success to true if the operation is successful
-      } catch (error) {
-        print("Error downloading or initializing video: $error");
-        retryCount++;
-        if (retryCount < maxRetries) {
-          print("Retrying... Attempt $retryCount");
-        } else {
-          print("Max retry attempts reached. Unable to download video.");
-          // Handle the error or show a message to the user indicating that retries have failed.
-        }
-      }
-    }
-
-    isLoading.value = false;
-  }
+  // Future<void> _downloadAndCacheVideos() async {
+  //   print("Start download and cache video");
+  //   isLoading.value = true;
+  //
+  //   int maxRetries = 3; // Maximum number of retry attempts
+  //   int retryCount = 0;
+  //   bool success = false;
+  //
+  //   while (retryCount < maxRetries && !success) {
+  //     try {
+  //       String p360AsMp4Url = VideoUrlManager.generateVideoUrl(VideoQuality.p360AsMp4, widget.videoUrl);
+  //       String? fileDir = await videoCachingManager.checkIfFileExists(p360AsMp4Url);
+  //       if(fileDir!=null){
+  //         print("Play video from file*****");
+  //         File file = File(fileDir);
+  //         videoController = VideoPlayerController.file(file);
+  //       }else{
+  //         print("Play video from URL^^^^^^");
+  //         videoCachingManager.stopCaching();
+  //         String p180Url = VideoUrlManager.generateVideoUrl(VideoQuality.p180, widget.videoUrl);
+  //         print(p180Url);
+  //         videoController = VideoPlayerController.networkUrl(Uri.parse(p180Url),formatHint: VideoFormat.hls,);
+  //       }
+  //
+  //       await videoController!.initialize();
+  //       videoController!.addListener(_onVideoStateChanged);
+  //       isInitialized = true;
+  //       videoController!.seekTo(Duration.zero);
+  //       VideoManager.playVideo(videoController!);
+  //       success = true; // Set success to true if the operation is successful
+  //     } catch (error) {
+  //       print("Error downloading or initializing video: $error");
+  //       retryCount++;
+  //       if (retryCount < maxRetries) {
+  //         print("Retrying... Attempt $retryCount");
+  //       } else {
+  //         print("Max retry attempts reached. Unable to download video.");
+  //         // Handle the error or show a message to the user indicating that retries have failed.
+  //       }
+  //     }
+  //   }
+  //
+  //   isLoading.value = false;
+  // }
 
   /// Handle video state changes
   Future<void> _onVideoStateChanged() async {
@@ -92,7 +95,7 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
     isPaused.value = videoController!.value.isPlaying ? false : true;
 
     _isBuffering = videoController!.value.isBuffering;
-    print("_isBuffering:$_isBuffering");
+    debugPrint("_isBuffering:$_isBuffering");
 
     if (_isBuffering) {
       videoCachingManager.stopCaching();
@@ -104,7 +107,7 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
   @override
   void dispose() {
     if(videoController!=null){
-      print('Start Dispose the video');
+      debugPrint('Start Dispose the video');
       isInitialized = false;
       VideoManager.stopAllVideos();
       VideoManager.disposeAllVideos();
@@ -126,8 +129,8 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
                 children: [
                   _buildImageWithPlayButton(),
                   if(isLoadingValue)
-                    Padding(
-                      padding: const EdgeInsets.all(9.3),
+                    const Padding(
+                      padding: EdgeInsets.all(9.3),
                       child: CircularProgressIndicator(color: Colors.red,),
                     ),
                 ],
@@ -168,7 +171,7 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
       children: [
         _buildCachedNetworkImage(),
         PlayButton(onTap: (){
-          _downloadAndCacheVideos();
+          // _downloadAndCacheVideos();
         }),
       ],
     );
@@ -177,11 +180,12 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
   /// Widget for displaying cached network image
   Widget _buildCachedNetworkImage() {
     return AspectRatio(
-      aspectRatio: widget.imageWidth/widget.imageHeight,
+      aspectRatio: 1,//widget.imageWidth/widget.imageHeight,
       child: CachedNetWorkImage(
         url: widget.imageUrl,
-        imageWidth: widget.imageWidth,
-        imageHeight: widget.imageHeight,
+        accessKey: widget.accessKey,
+        // imageWidth: widget.imageWidth,
+        // imageHeight: widget.imageHeight,
       ),
     );
   }
