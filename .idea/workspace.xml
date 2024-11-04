@@ -13,18 +13,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/injection_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/injection_container.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/managers/video_urls_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/managers/video_urls_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/util/assets_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/util/assets_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/widgets/cached_net_work_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/cached_net_work_image.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/widgets/play_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/play_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/home_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/home_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/home_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/home_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/home_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/home_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/success_error/either_success_or_error.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/success_error/either_success_or_error.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/pages/all_products_widget_v2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/pages/all_products_widget_v2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/widgets/product_widget_v2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/widgets/product_widget_v2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/managers/caching_manager/caching_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/managers/caching_manager/caching_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/managers/caching_manager/task_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/managers/caching_manager/task_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/managers/video_caching_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/managers/video_caching_manager.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/product_widget/widgets/video_widget_v2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/widgets/video_widget_v2.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -106,7 +98,7 @@
       <workItem from="1730574636336" duration="216000" />
       <workItem from="1730614797771" duration="5059000" />
       <workItem from="1730633328687" duration="2845000" />
-      <workItem from="1730702948294" duration="5386000" />
+      <workItem from="1730702948294" duration="7909000" />
     </task>
     <servers />
   </component>

@@ -43,50 +43,58 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
   }
 
 
-  // Future<void> _downloadAndCacheVideos() async {
-  //   print("Start download and cache video");
-  //   isLoading.value = true;
-  //
-  //   int maxRetries = 3; // Maximum number of retry attempts
-  //   int retryCount = 0;
-  //   bool success = false;
-  //
-  //   while (retryCount < maxRetries && !success) {
-  //     try {
-  //       String p360AsMp4Url = VideoUrlManager.generateVideoUrl(VideoQuality.p360AsMp4, widget.videoUrl);
-  //       String? fileDir = await videoCachingManager.checkIfFileExists(p360AsMp4Url);
-  //       if(fileDir!=null){
-  //         print("Play video from file*****");
-  //         File file = File(fileDir);
-  //         videoController = VideoPlayerController.file(file);
-  //       }else{
-  //         print("Play video from URL^^^^^^");
-  //         videoCachingManager.stopCaching();
-  //         String p180Url = VideoUrlManager.generateVideoUrl(VideoQuality.p180, widget.videoUrl);
-  //         print(p180Url);
-  //         videoController = VideoPlayerController.networkUrl(Uri.parse(p180Url),formatHint: VideoFormat.hls,);
-  //       }
-  //
-  //       await videoController!.initialize();
-  //       videoController!.addListener(_onVideoStateChanged);
-  //       isInitialized = true;
-  //       videoController!.seekTo(Duration.zero);
-  //       VideoManager.playVideo(videoController!);
-  //       success = true; // Set success to true if the operation is successful
-  //     } catch (error) {
-  //       print("Error downloading or initializing video: $error");
-  //       retryCount++;
-  //       if (retryCount < maxRetries) {
-  //         print("Retrying... Attempt $retryCount");
-  //       } else {
-  //         print("Max retry attempts reached. Unable to download video.");
-  //         // Handle the error or show a message to the user indicating that retries have failed.
-  //       }
-  //     }
-  //   }
-  //
-  //   isLoading.value = false;
-  // }
+  Future<void> _downloadAndCacheVideos() async {
+    print("Start download and cache video");
+    isLoading.value = true;
+
+    int maxRetries = 3; // Maximum number of retry attempts
+    int retryCount = 0;
+    bool success = false;
+
+    while (retryCount < maxRetries && !success) {
+      try {
+        // String p360AsMp4Url = VideoUrlManager.generateVideoUrl(VideoQuality.p360AsMp4, widget.videoUrl);
+        // String? fileDir = await videoCachingManager.checkIfFileExists(p360AsMp4Url);
+        // if(fileDir!=null){
+        //   print("Play video from file*****");
+        //   File file = File(fileDir);
+        //   videoController = VideoPlayerController.file(file);
+        // }else{
+        debugPrint("Play video from URL^^^^^^");
+          // videoCachingManager.stopCaching();
+          // String p180Url = VideoUrlManager.generateVideoUrl(VideoQuality.p180, widget.videoUrl);
+          debugPrint(widget.videoUrl);
+          debugPrint(widget.accessKey);
+          videoController = VideoPlayerController.networkUrl(
+            Uri.parse(widget.videoUrl),
+            formatHint: VideoFormat.hls,
+            httpHeaders: {
+              'AccessKey': widget.accessKey,
+              "Content-Type": "application/json"
+            },
+          );
+        // }
+
+        await videoController!.initialize();
+        videoController!.addListener(_onVideoStateChanged);
+        isInitialized = true;
+        videoController!.seekTo(Duration.zero);
+        VideoManager.playVideo(videoController!);
+        success = true; // Set success to true if the operation is successful
+      } catch (error) {
+        print("Error downloading or initializing video: $error");
+        retryCount++;
+        if (retryCount < maxRetries) {
+          print("Retrying... Attempt $retryCount");
+        } else {
+          print("Max retry attempts reached. Unable to download video.");
+          // Handle the error or show a message to the user indicating that retries have failed.
+        }
+      }
+    }
+
+    isLoading.value = false;
+  }
 
   /// Handle video state changes
   Future<void> _onVideoStateChanged() async {
@@ -98,9 +106,9 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
     debugPrint("_isBuffering:$_isBuffering");
 
     if (_isBuffering) {
-      videoCachingManager.stopCaching();
+      // videoCachingManager.stopCaching();
     } else {
-      videoCachingManager.resumeCaching();
+      // videoCachingManager.resumeCaching();
     }
   }
 
@@ -171,7 +179,7 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
       children: [
         _buildCachedNetworkImage(),
         PlayButton(onTap: (){
-          // _downloadAndCacheVideos();
+          _downloadAndCacheVideos();
         }),
       ],
     );
