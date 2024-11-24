@@ -4,7 +4,7 @@ import 'package:video_player/video_player.dart';
 import '../../../../../../core/globals.dart';
 import '../../core/widgets/cached_net_work_image.dart';
 import '../../core/widgets/price_widget.dart';
-import 'video_widget_v2.dart';
+import 'video_widget.dart';
 
 /// Widget class representing a product item with video or image attachment
 class ProductWidgetV2 extends StatefulWidget {
@@ -47,14 +47,12 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
         _videoUrl = item.url;
         _imageUrl = item.thumbnail;
         _accessKey = item.password;
-
-
       } else {
         _accessKey = item.password;
         _imageUrl = item.url;
-        _imageWidth = item.width;
-        _imageHeight = item.height;
       }
+      _imageWidth = item.width;
+      _imageHeight = item.height;
     }
   }
 
@@ -63,6 +61,8 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
+        print(_imageUrl);
+        print(_videoUrl);
         // goTo(context, (context) => ProductPage(id: widget.id, videoPlayerController: widget.videoController,));
       },
       child: Container(
@@ -78,7 +78,7 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
             _buildProductImage(),
 
             /// Product details (title, price, reviews, etc.)
-            // _buildProductDetails(),
+            _buildProductDetails(),
           ],
         ),
       ),
@@ -92,7 +92,7 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
       child: ClipRRect(
           borderRadius: nestedBorderRadius,
           child: (_videoUrl!="")?
-          VideoWidgetV2(
+          VideoWidget(
               imageUrl: _imageUrl,
               videoUrl: _videoUrl,
               accessKey: _accessKey,

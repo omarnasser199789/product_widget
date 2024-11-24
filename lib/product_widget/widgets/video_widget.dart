@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:async';
-import 'dart:io';
 import '../../../../../../core/managers/VideoManager.dart';
-import '../../../../../../core/managers/video_caching_manager.dart';
-import '../../../../../../core/managers/video_urls_manager.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../../core/widgets/play_button.dart';
+
 /// Widget class representing a product item with video or image attachment
-class VideoWidgetV2 extends StatefulWidget {
+class VideoWidget extends StatefulWidget {
   final String imageUrl;
   final String videoUrl;
   final String accessKey;
   final double imageWidth;
   final double imageHeight;
 
-  const VideoWidgetV2({
+  const VideoWidget({
     Key? key,
     required this.imageUrl,
     required this.videoUrl,
@@ -25,10 +23,10 @@ class VideoWidgetV2 extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<VideoWidgetV2> createState() => _ProductWidgetState();
+  State<VideoWidget> createState() => _ProductWidgetState();
 }
 
-class _ProductWidgetState extends State<VideoWidgetV2> {
+class _ProductWidgetState extends State<VideoWidget> {
   late VideoPlayerController? videoController = null;
   List<String> videoUrls = [];
   bool isInitialized =false;
@@ -82,12 +80,12 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
         VideoManager.playVideo(videoController!);
         success = true; // Set success to true if the operation is successful
       } catch (error) {
-        print("Error downloading or initializing video: $error");
+        debugPrint("Error downloading or initializing video: $error");
         retryCount++;
         if (retryCount < maxRetries) {
-          print("Retrying... Attempt $retryCount");
+          debugPrint("Retrying... Attempt $retryCount");
         } else {
-          print("Max retry attempts reached. Unable to download video.");
+          debugPrint("Max retry attempts reached. Unable to download video.");
           // Handle the error or show a message to the user indicating that retries have failed.
         }
       }
@@ -188,12 +186,12 @@ class _ProductWidgetState extends State<VideoWidgetV2> {
   /// Widget for displaying cached network image
   Widget _buildCachedNetworkImage() {
     return AspectRatio(
-      aspectRatio: 1,//widget.imageWidth/widget.imageHeight,
+      aspectRatio: widget.imageWidth/widget.imageHeight,
       child: CachedNetWorkImage(
         url: widget.imageUrl,
         accessKey: widget.accessKey,
-        // imageWidth: widget.imageWidth,
-        // imageHeight: widget.imageHeight,
+        imageWidth: widget.imageWidth,
+        imageHeight: widget.imageHeight,
       ),
     );
   }

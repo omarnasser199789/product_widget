@@ -45,13 +45,9 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
         builder: (context, state) {
           /// Handle different states emitted by the HomeBloc
           debugPrint(state.toString());
-          // if (state is SuccessGetAllProductsEntity){
-          //   /// Caching products
-          //   BlocProvider.of<HomeBloc>(context).add(CachingProductsEvent(productsEntity: state.productsEntity));
-          // }
-          // else
+
             if(state is SuccessGetAllProductsEntity){
-            if(state.productsEntity.products.isEmpty){return Container(child: Center(child: Text("There is no items!"),),); }
+            if(state.productsEntity.products.isEmpty){return const Center(child: Text("There is no items!"),); }
 
             /// If successful, append the received data to the paging controller
             final List<ProductModel> newData = state.productsEntity.products;
@@ -67,8 +63,7 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
 
               /// Check if there are new items to append
               if (filteredData.isNotEmpty) {
-                final isLastPage = state.productsEntity.products ==
-                    _pagingController.nextPageKey! + 1;
+                bool isLastPage = state.productsEntity.products.length == _pagingController.nextPageKey! + 1;
 
                 if (isLastPage) {
                   _pagingController.appendLastPage(filteredData);
@@ -87,16 +82,22 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
           /// Display products in a paginated masonry grid view
           return PagedMasonryGridView.count(
             pagingController: _pagingController,
-            padding: EdgeInsets.only(left: 12, right: 12,bottom: 100,top: widget.topPadding??0),
+            padding: const EdgeInsets.symmetric(horizontal: 12).copyWith(bottom: 100, top: widget.topPadding ?? 0,),
             builderDelegate: PagedChildBuilderDelegate<ProductModel>(
               /// Build each product widget using the received data
-            itemBuilder: (context, item, index) =>
-                ProductWidgetV2(
-                  title: item.titles,
-                  attachments: item.attachments,
-                  id: item.id,
-                  videoController: videoController,
-              ),
+              itemBuilder: (context, item, index) {
+                /// Check if the product has attachments before building the widget
+                if (item.attachments.isNotEmpty) {
+                  return ProductWidgetV2(
+                    title: item.titles,
+                    attachments: item.attachments,
+                    id: item.id,
+                    videoController: videoController,
+                  );
+                }
+                /// Return an empty container if there are no attachments
+                return Container();
+              },
             ),
             crossAxisCount: 2,
             crossAxisSpacing: 12,

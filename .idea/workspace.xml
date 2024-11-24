@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1705132-957f-4b2d-9377-9ec5815019ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/product_widget.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/product_widget.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/product_widget/pages/all_products_widget_v2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/pages/all_products_widget_v2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/product_widget/widgets/product_widget_v2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/widgets/product_widget_v2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/product_widget/widgets/video_widget_v2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/widgets/video_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,7 +98,8 @@
       <workItem from="1730614797771" duration="5059000" />
       <workItem from="1730633328687" duration="2845000" />
       <workItem from="1730702948294" duration="8207000" />
-      <workItem from="1731483981143" duration="1459000" />
+      <workItem from="1731483981143" duration="5021000" />
+      <workItem from="1732448326824" duration="2872000" />
     </task>
     <servers />
   </component>
