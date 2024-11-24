@@ -4,8 +4,9 @@ import 'dart:async';
 import '../../../../../../core/managers/VideoManager.dart';
 import '../../../../../../core/widgets/cached_net_work_image.dart';
 import '../../../../../../core/widgets/play_button.dart';
+import 'cover_widget.dart';
 
-/// Widget class representing a product item with video or image attachment
+/// Widget class representing a product item with video or image attachment.
 class VideoWidget extends StatefulWidget {
   final String imageUrl;
   final String videoUrl;
@@ -23,97 +24,60 @@ class VideoWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<VideoWidget> createState() => _ProductWidgetState();
+  State<VideoWidget> createState() => _VideoWidgetState();
 }
 
-class _ProductWidgetState extends State<VideoWidget> {
+class _VideoWidgetState extends State<VideoWidget> {
   late VideoPlayerController? videoController = null;
+  bool isInitialized = false;
+
+  /// List of video URLs.
   List<String> videoUrls = [];
-  bool isInitialized =false;
-  /// Notifier for pause state
-  ValueNotifier<bool>  isPaused = ValueNotifier<bool>(true);
-  ValueNotifier<bool>  isLoading = ValueNotifier<bool>(false);
-  bool _isBuffering = false;
+
+  /// Notifier for pause state.
+  ValueNotifier<bool> isPaused = ValueNotifier<bool>(true);
+
+  /// Notifier for loading state.
+  ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
 
   @override
   void initState() {
     super.initState();
   }
 
-
-  Future<void> _downloadAndCacheVideos() async {
-    print("Start download and cache video");
+  /// Initializes and plays the video.
+  Future<void> _playVideos() async {
     isLoading.value = true;
+    debugPrint('Video URL: ${widget.videoUrl}');
+    debugPrint('Access Key: ${widget.accessKey}');
 
-    int maxRetries = 3; // Maximum number of retry attempts
-    int retryCount = 0;
-    bool success = false;
+    videoController = VideoPlayerController.networkUrl(
+      Uri.parse(widget.videoUrl),
+      formatHint: VideoFormat.hls,
+      httpHeaders: {
+        'AccessKey': widget.accessKey,
+        "Content-Type": "application/json",
+      },
+    );
 
-    while (retryCount < maxRetries && !success) {
-      try {
-        // String p360AsMp4Url = VideoUrlManager.generateVideoUrl(VideoQuality.p360AsMp4, widget.videoUrl);
-        // String? fileDir = await videoCachingManager.checkIfFileExists(p360AsMp4Url);
-        // if(fileDir!=null){
-        //   print("Play video from file*****");
-        //   File file = File(fileDir);
-        //   videoController = VideoPlayerController.file(file);
-        // }else{
-        debugPrint("Play video from URL^^^^^^");
-          // videoCachingManager.stopCaching();
-          // String p180Url = VideoUrlManager.generateVideoUrl(VideoQuality.p180, widget.videoUrl);
-          debugPrint(widget.videoUrl);
-          debugPrint(widget.accessKey);
-          videoController = VideoPlayerController.networkUrl(
-            Uri.parse(widget.videoUrl),
-            formatHint: VideoFormat.hls,
-            httpHeaders: {
-              'AccessKey': widget.accessKey,
-              "Content-Type": "application/json"
-            },
-          );
-        // }
-
-        await videoController!.initialize();
-        videoController!.addListener(_onVideoStateChanged);
-        isInitialized = true;
-        videoController!.seekTo(Duration.zero);
-        VideoManager.playVideo(videoController!);
-        success = true; // Set success to true if the operation is successful
-      } catch (error) {
-        debugPrint("Error downloading or initializing video: $error");
-        retryCount++;
-        if (retryCount < maxRetries) {
-          debugPrint("Retrying... Attempt $retryCount");
-        } else {
-          debugPrint("Max retry attempts reached. Unable to download video.");
-          // Handle the error or show a message to the user indicating that retries have failed.
-        }
-      }
-    }
-
+    await videoController!.initialize();
+    videoController!.addListener(_onVideoStateChanged);
+    isInitialized = true;
+    videoController!.seekTo(Duration.zero);
+    VideoManager.playVideo(videoController!);
     isLoading.value = false;
   }
 
-  /// Handle video state changes
+  /// Handles video state changes to update the pause state.
   Future<void> _onVideoStateChanged() async {
-    await Future.delayed(const Duration(milliseconds: 800));
-    // Check if the video is paused
-    isPaused.value = videoController!.value.isPlaying ? false : true;
-
-    _isBuffering = videoController!.value.isBuffering;
-    debugPrint("_isBuffering:$_isBuffering");
-
-    if (_isBuffering) {
-      // videoCachingManager.stopCaching();
-    } else {
-      // videoCachingManager.resumeCaching();
-    }
+    await Future.delayed(const Duration(milliseconds: 300));
+    isPaused.value = !videoController!.value.isPlaying;
   }
 
   @override
   void dispose() {
-    if(videoController!=null){
-      debugPrint('Start Dispose the video');
+    if (videoController != null) {
+      debugPrint('Disposing the video controller');
       isInitialized = false;
       VideoManager.stopAllVideos();
       VideoManager.disposeAllVideos();
@@ -124,75 +88,57 @@ class _ProductWidgetState extends State<VideoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
+    return ValueListenableBuilder<bool>(
       valueListenable: isPaused,
       builder: (BuildContext context, bool isPausedValue, Widget? child) {
-        if(isPausedValue){
-          return ValueListenableBuilder(
-            valueListenable: isLoading,
-            builder: (BuildContext context, bool isLoadingValue, Widget? child) {
-              return Stack(
-                children: [
-                  _buildImageWithPlayButton(),
-                  if(isLoadingValue)
-                    const Padding(
-                      padding: EdgeInsets.all(9.3),
-                      child: CircularProgressIndicator(color: Colors.red,),
-                    ),
-                ],
-              );
-            },
-          );
-
-        }else{
-          return _buildVideoPlayer();
-        }
+        return isPausedValue
+            ? ValueListenableBuilder<bool>(
+          valueListenable: isLoading,
+          builder: (BuildContext context, bool isLoadingValue, Widget? child) {
+            return _buildImageWithPlayButton(isLoading: isLoadingValue);
+          },
+        )
+            : _buildVideoPlayer();
       },
     );
   }
 
-  /// Widget for displaying product image or video with play button
+  /// Builds the video player widget.
   Widget _buildVideoPlayer() {
-    return  Stack(
+    return Stack(
       alignment: Alignment.bottomCenter,
       children: [
         AspectRatio(
           aspectRatio: videoController!.value.aspectRatio,
           child: VideoPlayer(videoController!),
         ),
-        VideoProgressIndicator(videoController!, allowScrubbing: true,
+        VideoProgressIndicator(
+          videoController!,
+          allowScrubbing: true,
           colors: VideoProgressColors(
-              playedColor:Theme.of(context).secondaryHeaderColor,
-              bufferedColor:Theme.of(context).primaryColor.withOpacity(0.5),
-              backgroundColor:Colors.white
+            playedColor: Theme.of(context).secondaryHeaderColor,
+            bufferedColor: Theme.of(context).primaryColor.withOpacity(0.5),
+            backgroundColor: Colors.white,
           ),
-        )
+        ),
       ],
     );
   }
 
-  /// Widget for displaying image with play button overlay
-  Widget _buildImageWithPlayButton() {
+  /// Builds the image with a play button overlay.
+  Widget _buildImageWithPlayButton({required bool isLoading}) {
     return Stack(
       children: [
-        _buildCachedNetworkImage(),
-        PlayButton(onTap: (){
-          _downloadAndCacheVideos();
-        }),
+        CoverWidget(
+          imageWidth: widget.imageWidth,
+          imageHeight: widget.imageHeight,
+          imageUrl: widget.imageUrl,
+          accessKey: widget.accessKey,),
+        PlayButton(
+          onTap: _playVideos,
+          isLoading: isLoading,
+        ),
       ],
-    );
-  }
-
-  /// Widget for displaying cached network image
-  Widget _buildCachedNetworkImage() {
-    return AspectRatio(
-      aspectRatio: widget.imageWidth/widget.imageHeight,
-      child: CachedNetWorkImage(
-        url: widget.imageUrl,
-        accessKey: widget.accessKey,
-        imageWidth: widget.imageWidth,
-        imageHeight: widget.imageHeight,
-      ),
     );
   }
 

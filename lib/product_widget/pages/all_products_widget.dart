@@ -4,24 +4,23 @@ import 'package:ecapp_core_v2/product/domain/use_case/get/get_products_use_case.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-
 import 'package:video_player/video_player.dart';
 import '../bloc/bloc.dart';
-import '../widgets/product_widget_v2.dart';
+import '../widgets/product_widget.dart';
 
 
 /// Widget responsible for displaying a paginated list of products
-class AllProductsWidgetV2 extends StatefulWidget {
-  const AllProductsWidgetV2({Key? key, this.catId,this.topPadding}) : super(key: key);
+class AllProductsWidget extends StatefulWidget {
+  const AllProductsWidget({Key? key, this.catId,this.topPadding}) : super(key: key);
   final int? catId;
   final double? topPadding;
 
   @override
-  State<AllProductsWidgetV2> createState() => _AllProductsWidgetV2State();
+  State<AllProductsWidget> createState() => _AllProductsWidgetState();
 }
 
 /// State class for AllProductsWidgetV2
-class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
+class _AllProductsWidgetState extends State<AllProductsWidget> {
 
   /// Controller for managing pagination logic
   final PagingController<int, ProductModel> _pagingController = PagingController(firstPageKey: 0);
@@ -63,7 +62,7 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
 
               /// Check if there are new items to append
               if (filteredData.isNotEmpty) {
-                bool isLastPage = state.productsEntity.products.length == _pagingController.nextPageKey! + 1;
+                bool isLastPage = state.productsEntity.totalPages == _pagingController.nextPageKey! + 1;
 
                 if (isLastPage) {
                   _pagingController.appendLastPage(filteredData);
@@ -88,7 +87,7 @@ class _AllProductsWidgetV2State extends State<AllProductsWidgetV2> {
               itemBuilder: (context, item, index) {
                 /// Check if the product has attachments before building the widget
                 if (item.attachments.isNotEmpty) {
-                  return ProductWidgetV2(
+                  return ProductWidget(
                     title: item.titles,
                     attachments: item.attachments,
                     id: item.id,

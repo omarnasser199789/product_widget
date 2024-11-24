@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:product_widget/product_widget/bloc/home_bloc.dart';
-import 'package:product_widget/product_widget/pages/all_products_widget_v2.dart';
+import 'package:product_widget/product_widget/pages/all_products_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'Theme/style.dart';
+import 'Theme/theme_values.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
@@ -17,10 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      darkTheme: darkTheme,/// Set the dark theme using the predefined darkTheme
       home: const DemoPage(),
     );
   }
@@ -32,12 +31,11 @@ class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Favorite Button usage demo'),
-      ),
       body: BlocProvider(
         create: (_) => sl<HomeBloc>(), // Provides HomeBloc to AllProductsWidgetV2
-        child: AllProductsWidgetV2(),
+        child: Container(
+            decoration: backgroundBoxDecoration,
+            child: SafeArea(child: AllProductsWidget())),
       ),
     );
   }

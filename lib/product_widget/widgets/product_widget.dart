@@ -4,16 +4,17 @@ import 'package:video_player/video_player.dart';
 import '../../../../../../core/globals.dart';
 import '../../core/widgets/cached_net_work_image.dart';
 import '../../core/widgets/price_widget.dart';
+import 'cover_widget.dart';
 import 'video_widget.dart';
 
 /// Widget class representing a product item with video or image attachment
-class ProductWidgetV2 extends StatefulWidget {
+class ProductWidget extends StatefulWidget {
   final String title; // Product title
   final String id; // Product ID
   final List<Attachment> attachments; // List of attachments (videos/images)
   final VideoPlayerController videoController;
 
-  const ProductWidgetV2({
+  const ProductWidget({
     Key? key,
     required this.title,
     required this.id,
@@ -22,10 +23,10 @@ class ProductWidgetV2 extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ProductWidgetV2> createState() => _ProductWidgetV2State();
+  State<ProductWidget> createState() => _ProductWidgetState();
 }
 
-class _ProductWidgetV2State extends State<ProductWidgetV2> {
+class _ProductWidgetState extends State<ProductWidget> {
 
   /// URL of the video attachment
   String _videoUrl = "";
@@ -97,21 +98,12 @@ class _ProductWidgetV2State extends State<ProductWidgetV2> {
               videoUrl: _videoUrl,
               accessKey: _accessKey,
               imageHeight: _imageHeight,
-              imageWidth: _imageWidth)
-              : _buildCachedNetworkImage()
-      ),
-    );
-  }
-
-  /// Widget for displaying cached network image
-  Widget _buildCachedNetworkImage() {
-    return AspectRatio(
-      aspectRatio: (_imageWidth/_imageHeight>0)?_imageWidth/_imageHeight:1,
-      child: CachedNetWorkImage(
-        url: _imageUrl,
-        accessKey: _accessKey,
-        imageWidth: _imageWidth,
-        imageHeight: _imageHeight,
+              imageWidth: _imageWidth) :
+          CoverWidget(
+            imageWidth: _imageWidth,
+            imageHeight: _imageHeight,
+            imageUrl: _imageUrl,
+            accessKey: _accessKey,),
       ),
     );
   }
