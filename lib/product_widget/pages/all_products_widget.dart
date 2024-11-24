@@ -31,7 +31,7 @@ class _AllProductsWidgetState extends State<AllProductsWidget> {
     /// Initialize the paging controller and add a listener for page requests
     _pagingController.addPageRequestListener((pageKey) {
       /// Trigger an event to fetch products from the HomeBloc
-      BlocProvider.of<HomeBloc>(context).add(GetAllProductsEvent(params: GetProductsParams(page: pageKey, catId: widget.catId, pageSize: 7)));
+      BlocProvider.of<ProductWidgetBloc>(context).add(GetAllProductsEvent(params: GetProductsParams(page: pageKey, catId: widget.catId, pageSize: 7)));
     });
     super.initState();
   }
@@ -40,7 +40,7 @@ class _AllProductsWidgetState extends State<AllProductsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body:BlocBuilder<HomeBloc, HomeState>(
+      body:BlocBuilder<ProductWidgetBloc, ProductWidgetState>(
         builder: (context, state) {
           /// Handle different states emitted by the HomeBloc
           debugPrint(state.toString());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:product_widget/product_widget/bloc/home_bloc.dart';
+import 'package:product_widget/product_widget/bloc/product_widget_bloc.dart';
 import 'package:product_widget/product_widget/pages/all_products_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'Theme/style.dart';
@@ -32,7 +32,7 @@ class DemoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (_) => sl<HomeBloc>(), // Provides HomeBloc to AllProductsWidgetV2
+        create: (_) => sl<ProductWidgetBloc>(), // Provides HomeBloc to AllProductsWidgetV2
         child: Container(
             decoration: backgroundBoxDecoration,
             child: SafeArea(child: AllProductsWidget())),

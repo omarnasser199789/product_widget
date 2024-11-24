@@ -362,18 +362,6 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "intl",
-      "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/intl-0.19.0",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
-      "name": "jiffy",
-      "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/jiffy-6.3.1",
-      "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
       "name": "js",
       "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
@@ -512,20 +500,8 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "random_string",
-      "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/random_string-2.3.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "rxdart",
       "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/rxdart-0.28.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "scroll_date_picker",
-      "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/scroll_date_picker-3.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -686,12 +662,6 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "wheel_picker",
-      "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/wheel_picker-0.0.5",
-      "packageUri": "lib/",
-      "languageVersion": "3.1"
-    },
-    {
       "name": "win32",
       "rootUri": "file:///Users/omarnaser/.pub-cache/hosted/pub.dev/win32-5.5.4",
       "packageUri": "lib/",
@@ -722,7 +692,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-11-24T17:04:44.055887Z",
+  "generated": "2024-11-24T17:41:01.774498Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/omarnaser/Development/flutter",
