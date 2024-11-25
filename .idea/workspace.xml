@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1705132-957f-4b2d-9377-9ec5815019ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/injection_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/injection_container.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/home_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/product_widget_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/home_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/product_widget_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/home_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/product_widget_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/bloc/success_error/either_success_or_error.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/bloc/success_error/either_success_or_error.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/product_widget/pages/all_products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/product_widget/pages/all_products_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +94,7 @@
       <workItem from="1730702948294" duration="8207000" />
       <workItem from="1731483981143" duration="5021000" />
       <workItem from="1732448326824" duration="2872000" />
-      <workItem from="1732465446056" duration="7289000" />
+      <workItem from="1732465446056" duration="7386000" />
     </task>
     <servers />
   </component>
