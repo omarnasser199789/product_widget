@@ -35,7 +35,7 @@ class DemoPage extends StatelessWidget {
         create: (_) => sl<ProductWidgetBloc>(), // Provides HomeBloc to AllProductsWidgetV2
         child: Container(
             decoration: backgroundBoxDecoration,
-            child: SafeArea(child: AllProductsWidget())),
+            child: AllProductsWidget(topPadding: MediaQuery.of(context).padding.top,)),
       ),
     );
   }
