@@ -1,0 +1,2 @@
+- Added new customization features
+- Improved app performance and stability

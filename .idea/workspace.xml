@@ -5,12 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1705132-957f-4b2d-9377-9ec5815019ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/de-DE/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/fr-FR/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-28 at 20.56.51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/keywords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/marketing_url.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/name.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/privacy_url.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/promotional_text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/release_notes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/support_url.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-28 at 20.56.51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/keywords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/marketing_url.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/name.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/privacy_url.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/promotional_text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/release_notes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/support_url.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/Fastfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/Fastfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/de-DE/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/fr-FR/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +51,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2oJ050S62YbXwMXHQA8aGBvfgQM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="1" />
   </component>
@@ -46,7 +69,7 @@
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/omarnaser/Documents/GitHub/product_widget/example/ios/fastlane/screenshots/fr-FR",
+    "last_opened_file_path": "/Users/omarnaser/Documents/GitHub/product_widget/example/ios/fastlane/screenshots/default",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,14 +82,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/default" />
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/fr-FR" />
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/de-DE" />
       <recent name="$PROJECT_DIR$/example/lib" />
       <recent name="$PROJECT_DIR$/example" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US" />
+      <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/de-DE" />
       <recent name="$PROJECT_DIR$/example/ios/fastlane" />
       <recent name="$PROJECT_DIR$/lib/product_widget/pages" />
     </key>
@@ -106,7 +130,7 @@
       <workItem from="1732726594007" duration="133000" />
       <workItem from="1732726745159" duration="84000" />
       <workItem from="1732727240542" duration="1140000" />
-      <workItem from="1732728653845" duration="11656000" />
+      <workItem from="1732728653845" duration="17931000" />
     </task>
     <servers />
   </component>
