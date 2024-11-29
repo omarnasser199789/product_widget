@@ -5,32 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1705132-957f-4b2d-9377-9ec5815019ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-28 at 20.56.51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/description.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/keywords.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/marketing_url.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/name.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/privacy_url.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/promotional_text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/release_notes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/support_url.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-28 at 20.56.51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/description.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/keywords.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/marketing_url.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/name.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/privacy_url.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/promotional_text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/release_notes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/support_url.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/init-cql.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/Appfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/Appfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/fastlane/Fastfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/Fastfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/Preview.html" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/Preview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/copyright.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/copyright.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/description.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/description.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/keywords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/keywords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/marketing_url.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/marketing_url.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/privacy_url.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/privacy_url.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/promotional_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/promotional_text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/release_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/release_notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/subtitle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/subtitle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/support_url.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/en-US/support_url.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/primary_category.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/primary_category.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/primary_first_sub_category.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/primary_first_sub_category.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/primary_second_sub_category.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/primary_second_sub_category.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/demo_password.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/demo_password.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/demo_user.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/demo_user.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/email_address.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/email_address.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/first_name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/first_name.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/last_name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/last_name.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/phone_number.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/review_information/phone_number.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/secondary_category.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/secondary_category.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/secondary_first_sub_category.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/secondary_first_sub_category.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/metadata/secondary_second_sub_category.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/metadata/secondary_second_sub_category.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/fastlane/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/report.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/de-DE/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/fr-FR/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-27 at 23.57.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/Simulator Screenshot - iPhone 16 Pro Max - 2024-11-28 at 20.56.51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/description.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/keywords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/marketing_url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/privacy_url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/promotional_text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/release_notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/default/support_url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/description.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/keywords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/marketing_url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/privacy_url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/promotional_text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/release_notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US/support_url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +96,7 @@
     "git-widget-placeholder": "main",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/omarnaser/Documents/GitHub/product_widget/example/ios/fastlane/screenshots/default",
+    "last_opened_file_path": "/Users/omarnaser/Documents/GitHub/product_widget/example",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,11 +109,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/default" />
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/fr-FR" />
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/de-DE" />
       <recent name="$PROJECT_DIR$/example/lib" />
-      <recent name="$PROJECT_DIR$/example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/example/ios/fastlane/screenshots/en-US" />

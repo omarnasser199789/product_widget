@@ -1,17 +1,5 @@
 # This file contains the fastlane.tools configuration
 # You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
 
 default_platform(:ios)
 
@@ -19,22 +7,16 @@ platform :ios do
   desc "Push a new release build to the App Store"
   lane :release do
     increment_build_number(xcodeproj: "Runner.xcodeproj")
-    # build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
+    # Uncomment the following line to build your app if needed
+    build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
 
     # Upload app to App Store with additional app review information
     upload_to_app_store(
+     username: "omar.nasser@ybservice.iq",
+     app_identifier: "com.omar.nasser.product.widget",
       skip_metadata: false,
-      skip_screenshots: false,
-      app_review_information: {
-#         contact_first_name: "Omar",
-#         contact_last_name: "Nasser",
-#         contact_email: "your_email@example.com",
-#         contact_phone: "+1234567890",
-#         demo_user: "demo@example.com",
-#         demo_password: "password123",
-        demo_account_required: false
-      }
+      skip_screenshots: false
     )
-
   end
+
 end

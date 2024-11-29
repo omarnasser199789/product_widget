@@ -1,1 +1,11 @@
+Release Notes for Version 2.1.0
+
+- Added dark mode for better usability in low-light environments.
+- Improved app performance with optimized code.
+- Fixed crash issue when navigating through the settings page.
+- Resolved a minor UI glitch in the profile section.
+
+For more details, visit https://www.exampleapp.com/changelog.
+
+Thank you for using SuperApp!
 
