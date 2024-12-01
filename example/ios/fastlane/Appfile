@@ -1,4 +1,4 @@
-app_identifier("com.elt.productt.widgett") # The bundle identifier of your app
+app_identifier("com.elt.test.widget") # The bundle identifier of your app
 apple_id("o.nasser@eltgcc.com") # Your Apple Developer Portal username
 
 itc_team_id("125908163") # App Store Connect Team ID
