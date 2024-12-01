@@ -1,8 +1,7 @@
-app_identifier("com.omar.nasser.product.widget") # The bundle identifier of your app
-apple_id("omar.nasser@ybservice.iq") # Your Apple Developer Portal username
+app_identifier("com.elt.productt.widgett") # The bundle identifier of your app
+apple_id("o.nasser@eltgcc.com") # Your Apple Developer Portal username
 
-itc_team_id("125005432") # App Store Connect Team ID
-team_id("YFT5VYLWY5") # Developer Portal Team ID
-
+itc_team_id("125908163") # App Store Connect Team ID
+team_id("W5L3C99TCA") # Developer Portal Team ID
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
