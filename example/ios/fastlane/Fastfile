@@ -13,7 +13,7 @@ platform :ios do
 
     # Upload app to App Store with additional app review information
     upload_to_app_store(
-     username: "omar.nasser@ybservice.iq",
+     username: "o.nasser@eltgcc.com",
      app_identifier: "com.elt.test.widget",
       skip_metadata: false,
       skip_screenshots: false

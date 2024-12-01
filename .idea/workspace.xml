@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d1705132-957f-4b2d-9377-9ec5815019ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/create_app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/create_app.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/init-cql.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/flutter_ios_build_and_release.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.app.dSYM.zip" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.app.dSYM.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.ipa" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.ipa" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/Appfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/Appfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/fastlane/Fastfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/Fastfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/fastlane/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/fastlane/report.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
