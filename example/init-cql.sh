@@ -44,7 +44,7 @@ cd ios || exit
 # Run Fastlane for releasing the app
 echo "🚢 Running Fastlane for iOS release..."
 # Uncomment and configure the following lines as needed for Fastlane commands:
-fastlane spaceauth -u omar.nasser@ybservice.iq
+yes | fastlane spaceauth -u omar.nasser@ybservice.iq
 export FASTLANE_PASSWORD="iofb-mzny-xleu-ppkj"
 yes | fastlane ios release
 
